@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qtect_task/pages/home.dart';
+import 'package:qtect_task/pages/video_details.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +18,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
 
       ),
-      home: const Home(),
+      // home: const Home(),
+      home: VideoDetails(),
     );
   }
 }
