@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:qtect_task/widgets/comment.dart';
-import 'package:qtect_task/widgets/custom_divider.dart';
-import 'package:qtect_task/widgets/headline_text.dart';
-import 'package:qtect_task/widgets/like_button.dart';
-import 'package:qtect_task/widgets/simple_blur_text.dart';
-import 'package:qtect_task/widgets/video_player_widget.dart';
+import 'package:qtect_task/presentation/widgets/comment.dart';
+import 'package:qtect_task/presentation/widgets/custom_divider.dart';
+import 'package:qtect_task/presentation/widgets/headline_text.dart';
+import 'package:qtect_task/presentation/widgets/like_button.dart';
+import 'package:qtect_task/presentation/widgets/simple_blur_text.dart';
+import 'package:qtect_task/presentation/widgets/video_player_widget.dart';
+
 import 'package:video_player/video_player.dart';
 
 class VideoDetails extends StatefulWidget {

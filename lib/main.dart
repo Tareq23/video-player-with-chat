@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:qtect_task/pages/home.dart';
-import 'package:qtect_task/pages/video_details.dart';
+import 'package:qtect_task/presentation/pages/video_details.dart';
+
 
 void main() {
   runApp(const MyApp());

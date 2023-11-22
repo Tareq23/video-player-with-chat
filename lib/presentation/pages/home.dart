@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:qtect_task/widgets/video_item.dart';
+import 'package:qtect_task/presentation/widgets/video_item.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);

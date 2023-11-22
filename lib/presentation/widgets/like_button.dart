@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:qtect_task/widgets/simple_blur_text.dart';
+import 'package:qtect_task/presentation/widgets/simple_blur_text.dart';
 
 class LikeButton extends StatelessWidget {
   final IconData icon;
