@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:qtect_task/business_logic/internet_connectivity/internet_bloc.dart';
+import 'package:qtect_task/business_logic/internet_connectivity/internet_state.dart';
+import 'package:qtect_task/constant/enum.dart';
 import 'package:qtect_task/presentation/widgets/video_item.dart';
 
 class Home extends StatelessWidget {
@@ -19,6 +23,15 @@ class Home extends StatelessWidget {
                 ),
                 SizedBox(height: 16,),
                 VideoItem(),
+                SizedBox(height: 18,),
+                BlocBuilder<InternetBloc,InternetState>(
+                  builder: (context,state){
+                    if(state is InternetConnected && state.connectionType == ConnectionType.Wifi){
+                      return Text('connected State');
+                    }
+                    return Text('Okk');
+                  },
+                ),
                 SizedBox(height: 18,),
                 VideoItem(),
                 SizedBox(height: 18,),
