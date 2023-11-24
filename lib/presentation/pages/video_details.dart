@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:qtect_task/constant/constant.dart';
+import 'package:qtect_task/presentation/widgets/network_image_builder.dart';
+import 'package:timeago/timeago.dart' as timeago;
 import 'package:qtect_task/data/model/video.dart';
 import 'package:qtect_task/presentation/widgets/comment.dart';
 import 'package:qtect_task/presentation/widgets/custom_divider.dart';
@@ -11,6 +14,7 @@ import 'package:video_player/video_player.dart';
 
 class VideoDetails extends StatefulWidget {
   final Video video;
+  // const VideoDetails({Key? key}) : super(key: key);
   const VideoDetails({Key? key, required this.video}) : super(key: key);
 
   @override
@@ -20,7 +24,6 @@ class VideoDetails extends StatefulWidget {
 class _VideoDetailsState extends State<VideoDetails> {
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size;
     return Scaffold(
       body: SafeArea(
         child: Container(
@@ -36,12 +39,17 @@ class _VideoDetailsState extends State<VideoDetails> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      HeadlineText(
-                          'আরব নেতাদের যে ভুলে ফি*লি*স্তি*নের এই দুর্দাশা | আবু ত্বহা মুহাম্মদ আদনান'),
+                      SizedBox(
+                        child: HeadlineText(
+                          widget.video.title!,
+                        ),
+                      ),
                       SizedBox(
                         height: 8,
                       ),
-                      SimpleBlurText(text: '53,245 views . 3 days ago'),
+                      SimpleBlurText(
+                          text:
+                              '${widget.video.viewers} views . ${timeago.format(widget.video.createdAt!, locale: 'bn')}'),
                       SizedBox(
                         height: 16,
                       ),
@@ -74,11 +82,15 @@ class _VideoDetailsState extends State<VideoDetails> {
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
-                                  SizedBox(
-                                    width: 40,
-                                    height: 40,
-                                    child: Image.asset(
-                                        'assets/images/channel2.png'),
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.circular(50),
+                                    child: SizedBox(
+                                      width: 40,
+                                      height: 40,
+                                      child: NetworkImageBuilder(
+                                        imageUrl: widget.video.channelImage!,
+                                      ),
+                                    ),
                                   ),
                                   const SizedBox(
                                     width: 8,
@@ -88,7 +100,7 @@ class _VideoDetailsState extends State<VideoDetails> {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        HeadlineText('Mega Bangla Tv'),
+                                        HeadlineText(widget.video.channelName!),
                                         SimpleBlurText(
                                           text: '3M Subscribers',
                                           fontSize: 11,
@@ -100,18 +112,19 @@ class _VideoDetailsState extends State<VideoDetails> {
                               ),
                             ),
                             Container(
-                                padding: EdgeInsets.symmetric(
-                                    vertical: 8, horizontal: 14),
-                                decoration: BoxDecoration(
-                                    color: Color.fromRGBO(56, 152, 252, 1),
-                                    borderRadius: BorderRadius.circular(4)),
-                                child: Text(
-                                  '+   Subscribe',
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 12),
-                                ))
+                              padding: EdgeInsets.symmetric(
+                                  vertical: 8, horizontal: 14),
+                              decoration: BoxDecoration(
+                                  color: Color.fromRGBO(56, 152, 252, 1),
+                                  borderRadius: BorderRadius.circular(4)),
+                              child: Text(
+                                '+   Subscribe',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 12),
+                              ),
+                            )
                           ],
                         ),
                       ),
@@ -173,7 +186,7 @@ class _VideoDetailsState extends State<VideoDetails> {
                         ),
                       ),
                       suffixIcon: GestureDetector(
-                        onTap: (){},
+                        onTap: () {},
                         child: const Icon(
                           Icons.play_arrow_outlined,
                           size: 40,

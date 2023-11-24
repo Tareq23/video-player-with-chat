@@ -34,7 +34,11 @@ class _HomeState extends State<Home> {
         if (state is InternetConnected &&
             state.connectionType == ConnectionType.None) {
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: SizedBox(child: InternetCheck(),),),
+            const SnackBar(
+              content: SizedBox(
+                child: InternetCheck(),
+              ),
+            ),
           );
         }
       },
@@ -75,14 +79,20 @@ class _HomeState extends State<Home> {
                           )),
                         );
                       }
-                      if(state is VideoListLoaded){
-
+                      if (state is VideoListLoaded) {
                         return ListView.builder(
                           shrinkWrap: true,
                           itemCount: state.videos.length,
-                          physics: ScrollPhysics(),
-                          itemBuilder: (_,index){
-                            return VideoItem(video: state.videos[index],);
+                          physics: const ScrollPhysics(),
+                          itemBuilder: (_, index) {
+                            return GestureDetector(
+                              onTap: (){
+                                Navigator.pushNamed(context, '/video-details',arguments: state.videos[index]);
+                              },
+                              child: VideoItem(
+                                video: state.videos[index],
+                              ),
+                            );
                           },
                         );
                       }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qtect_task/constant/constant.dart';
 import 'package:timeago/timeago.dart' as timeago;
 import 'package:qtect_task/data/model/video.dart';
 import 'package:qtect_task/presentation/widgets/network_image_builder.dart';
@@ -56,6 +57,7 @@ class VideoItem extends StatelessWidget {
                 SizedBox(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       ClipRRect(
                         borderRadius: BorderRadius.circular(50),
@@ -71,14 +73,20 @@ class VideoItem extends StatelessWidget {
                         margin: const EdgeInsets.only(left: 7),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Text(
-                              video.title!.length > 20 ? '${video.title!.substring(0, 20)}+...' : video.title!,
-                              style: const TextStyle(
-                                fontSize: 15,
-                                color: Color.fromRGBO(26, 32, 44, 1),
-                                fontFamily: 'Hind Siliguri',
-                                fontWeight: FontWeight.w500
+                            Container(
+                              constraints: BoxConstraints(
+                                maxWidth: width! * 0.63
+                              ),
+                              child: Text(
+                                video.title!.length > 50 ? '${video.title!.substring(0, 50)}+...' : video.title!,
+                                style: const TextStyle(
+                                  fontSize: 15,
+                                  color: Color.fromRGBO(26, 32, 44, 1),
+                                  fontFamily: 'Hind Siliguri',
+                                  fontWeight: FontWeight.w500
+                                ),
                               ),
                             ),
                             Text(

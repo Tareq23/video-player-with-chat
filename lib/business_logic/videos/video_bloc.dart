@@ -14,7 +14,7 @@ class VideoBloc extends Bloc<VideoListEvent,VideoListState>{
     on<VideoListEvent>((event,state) async {
       emit(VideoListLoading());
       try{
-        print('calling');
+
         final videos = await videoRepository.getVideoList();
         print('videos list: ${videos.length}');
         emit(VideoListLoaded(videos));
