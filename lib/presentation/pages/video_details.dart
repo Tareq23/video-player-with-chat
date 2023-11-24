@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qtect_task/data/model/video.dart';
 import 'package:qtect_task/presentation/widgets/comment.dart';
 import 'package:qtect_task/presentation/widgets/custom_divider.dart';
 import 'package:qtect_task/presentation/widgets/headline_text.dart';
@@ -9,7 +10,8 @@ import 'package:qtect_task/presentation/widgets/video_player_widget.dart';
 import 'package:video_player/video_player.dart';
 
 class VideoDetails extends StatefulWidget {
-  const VideoDetails({Key? key}) : super(key: key);
+  final Video video;
+  const VideoDetails({Key? key, required this.video}) : super(key: key);
 
   @override
   State<VideoDetails> createState() => _VideoDetailsState();
