@@ -112,12 +112,12 @@ class _VideoDetailsState extends State<VideoDetails> {
                               ),
                             ),
                             Container(
-                              padding: EdgeInsets.symmetric(
+                              padding: const EdgeInsets.symmetric(
                                   vertical: 8, horizontal: 14),
                               decoration: BoxDecoration(
-                                  color: Color.fromRGBO(56, 152, 252, 1),
+                                  color: const Color.fromRGBO(56, 152, 252, 1),
                                   borderRadius: BorderRadius.circular(4)),
-                              child: Text(
+                              child: const Text(
                                 '+   Subscribe',
                                 style: TextStyle(
                                     color: Colors.white,
@@ -134,10 +134,11 @@ class _VideoDetailsState extends State<VideoDetails> {
                 Container(
                   margin: const EdgeInsets.only(bottom: 16),
                   decoration: BoxDecoration(
-                      border: Border.all(
-                    width: 1,
-                    color: const Color.fromRGBO(226, 232, 240, 1),
-                  )),
+                    border: Border.all(
+                      width: 1,
+                      color: const Color.fromRGBO(226, 232, 240, 1),
+                    ),
+                  ),
                 ),
 
                 /* COMMENT SECTION*/
@@ -147,7 +148,7 @@ class _VideoDetailsState extends State<VideoDetails> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      SimpleBlurText(
+                      const SimpleBlurText(
                         text: 'Comments 7.5K',
                         fontSize: 14,
                       ),
@@ -155,7 +156,7 @@ class _VideoDetailsState extends State<VideoDetails> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
+                          children: const [
                             Icon(
                               Icons.keyboard_arrow_up,
                               size: 20,
