@@ -1,5 +1,13 @@
 
 
+## Project User Interfaces
+
+<div style="float:left;margin:0 10px 10px 0" markdown="1">
+  <img width="100" height="220" src="https://github.com/Tareq23/video-player-with-chat/blob/main/ui/video_list.png">
+  <img width="100" height="220" src="https://github.com/Tareq23/video-player-with-chat/blob/main/ui/video_details_thumbnail.png">
+  <img width="100" height="220" src="https://github.com/Tareq23/video-player-with-chat/blob/main/ui/video_details_play.png">
+</div>
+
 ### At first add necessary dependencies
 
 ```yaml
@@ -85,11 +93,3 @@
    timeago.format(video.createdAt!, locale: 'bn')
    ```
 
-      
-
-
-<div style="float:left;margin:0 10px 10px 0" markdown="1">
-  <img style="margin:0 50px 0 0" width="100" height="220" src="https://github.com/Tareq23/video-player-with-chat/blob/main/ui/video_list.png">
-  <img style="margin:0 50px 0 0" width="100" height="220" src="https://github.com/Tareq23/video-player-with-chat/blob/main/ui/video_details_thumbnail.png">
-  <img style="margin:0 50px 0 0" width="100" height="220" src="https://github.com/Tareq23/video-player-with-chat/blob/main/ui/video_details_play.png">
-</div>
