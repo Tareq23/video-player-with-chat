@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:qtect_task/constant/constant.dart';
 import 'package:qtect_task/presentation/widgets/network_image_builder.dart';
 import 'package:timeago/timeago.dart' as timeago;
 import 'package:qtect_task/data/model/video.dart';
@@ -10,7 +9,6 @@ import 'package:qtect_task/presentation/widgets/like_button.dart';
 import 'package:qtect_task/presentation/widgets/simple_blur_text.dart';
 import 'package:qtect_task/presentation/widgets/video_player_widget.dart';
 
-import 'package:video_player/video_player.dart';
 
 class VideoDetails extends StatefulWidget {
   final Video video;
@@ -33,7 +31,7 @@ class _VideoDetailsState extends State<VideoDetails> {
             child: Column(
               children: [
                 /* VIDEO PLAYER */
-                const CustomVideoPlayer(),
+                CustomVideoPlayer(thumbnailUrl:widget.video.thumbnail!),
                 Container(
                   padding: const EdgeInsets.all(15),
                   child: Column(

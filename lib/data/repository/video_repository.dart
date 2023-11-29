@@ -11,9 +11,7 @@ class VideoRepository{
 
   Future<List<Video>> getVideoList() async{
     var result = await _videoAPI.getVideoRaw() as Map<String, dynamic>;
-    print('video repository: $result}');
     var videos = result['results'] as List;
-    print('videos repository: $videos}');
     return videos.map((e) => Video.fromJson(e)).toList();
   }
 

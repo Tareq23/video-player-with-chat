@@ -4,14 +4,12 @@ import 'package:qtect_task/business_logic/internet_connectivity/internet_bloc.da
 import 'package:qtect_task/business_logic/internet_connectivity/internet_state.dart';
 import 'package:qtect_task/business_logic/videos/video_bloc.dart';
 import 'package:qtect_task/business_logic/videos/video_event.dart';
-import 'package:qtect_task/business_logic/videos/video_state.dart';
 import 'package:qtect_task/constant/enum.dart';
 import 'package:qtect_task/constant/constant.dart';
 import 'package:qtect_task/presentation/screen/chat_screen.dart';
 import 'package:qtect_task/presentation/screen/home_screen.dart';
 import 'package:qtect_task/presentation/widgets/internet_check.dart';
-import 'package:qtect_task/presentation/widgets/try_again.dart';
-import 'package:qtect_task/presentation/widgets/video_item.dart';
+
 
 class Home extends StatefulWidget{
   const Home({Key? key}) : super(key: key);

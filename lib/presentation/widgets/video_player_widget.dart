@@ -7,7 +7,8 @@ import 'package:qtect_task/constant/constant.dart';
 import 'package:video_player/video_player.dart';
 
 class CustomVideoPlayer extends StatefulWidget {
-  const CustomVideoPlayer({Key? key}) : super(key: key);
+  final String thumbnailUrl;
+  const CustomVideoPlayer({Key? key, required this.thumbnailUrl}) : super(key: key);
 
   @override
   State<CustomVideoPlayer> createState() => _CustomVideoPlayerState();
@@ -50,11 +51,7 @@ class _CustomVideoPlayerState extends State<CustomVideoPlayer> {
                   );
                 }
                 else{
-                  return const Center(
-                    child: CircularProgressIndicator(
-                      color: Colors.teal,
-                    ),
-                  );
+                  return Image.network(widget.thumbnailUrl,width: double.infinity,height: double.infinity,fit: BoxFit.fill,);
                 }
               },
             )
@@ -75,7 +72,8 @@ class _CustomVideoPlayerState extends State<CustomVideoPlayer> {
                       color: const Color.fromRGBO(113, 128, 150, 0.4),
                       borderRadius: BorderRadius.circular(4)
                   ),
-                  child: const Icon(Icons.arrow_back,size: 22,color: Colors.white,)
+                  child: const Icon(Icons.arrow_back,size: 22,color: Colors.white,
+                  )
               ),
             ),
           ),
